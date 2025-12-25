@@ -1,0 +1,8 @@
+<script>
+setInterval(async () => {
+    let res = await fetch("/api/stream");
+    let data = await res.json();
+    document.getElementById("stream").innerHTML +=
+        `<p>${data.log} — <span style="color:${data.color}">${data.score}</span></p>`;
+}, 1500);
+</script>

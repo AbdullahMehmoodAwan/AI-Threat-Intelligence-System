@@ -1,0 +1,7 @@
+text,label
+Multiple failed SSH login attempts detected from IP 192.168.1.20,Bruteforce
+Unusual traffic spike indicates possible DDoS attack,DDoS
+SQL injection attempt detected on login page,WebAttack
+Benign system update request completed successfully,Benign
+Malicious PowerShell execution observed on endpoint,Malware
+User downloaded suspicious file from phishing email,Phishing

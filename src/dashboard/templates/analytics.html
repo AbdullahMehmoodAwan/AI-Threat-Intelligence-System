@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SentinelAI Analytics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            background: #000;
+            color: #cfe3ff;
+            font-family: Inter, sans-serif;
+            padding: 25px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #00eaff;
+            text-decoration: none;
+        }
+
+        /* CHART CONTAINERS STACKED IN COLUMN */
+        .chart-box {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            height: 380px; /* equal and fixed height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            max-height: 330px !important;
+            max-width: 100% !important;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>📊 SentinelAI Analytics</h1>
+<a href="/dashboard/">← Back to dashboard</a>
+
+<!-- STACKED CHARTS -->
+<div class="chart-box">
+    <canvas id="threatTypeChart"></canvas>
+</div>
+
+<div class="chart-box">
+    <canvas id="iocChart"></canvas>
+</div>
+
+<div class="chart-box">
+    <canvas id="anomalyChart"></canvas>
+</div>
+
+<script>
+async function loadData() {
+    let response = await fetch("/api/history");
+    let data = await response.json();
+
+    let threatCounts = {0:0,1:0,2:0,3:0};
+    let iocCounts = { ips:0, urls:0, domains:0, hashes:0, emails:0, cves:0 };
+    let anomalyScores = [];
+
+    data.forEach(entry => {
+        threatCounts[entry.threat_type]++;
+        anomalyScores.push(entry.anomaly_score);
+
+        for (let k in entry.iocs) {
+            iocCounts[k] += entry.iocs[k].length;
+        }
+    });
+
+    // PIE CHART — Threat Types
+    new Chart(document.getElementById("threatTypeChart"), {
+        type: "pie",
+        data: {
+            labels: ["Low","Medium","High","Critical"],
+            datasets: [{
+                data: Object.values(threatCounts),
+                backgroundColor: ["#00ff99","#ffe066","#ff7b00","#ff003c"]
+            }]
+        },
+        options: {
+            plugins: {
+                legend: { position: "bottom" }
+            }
+        }
+    });
+
+    // BAR CHART — IOC Count
+    new Chart(document.getElementById("iocChart"), {
+        type: "bar",
+        data: {
+            labels: Object.keys(iocCounts),
+            datasets: [{
+                label: "IOC Count",
+                data: Object.values(iocCounts),
+                backgroundColor: "#00c8ff"
+            }]
+        },
+        options: {
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+
+    // LINE CHART — Anomaly Score Trend
+    new Chart(document.getElementById("anomalyChart"), {
+        type: "line",
+        data: {
+            labels: anomalyScores.map((_,i)=>`Scan ${i+1}`),
+            datasets: [{
+                label: "Anomaly Score",
+                data: anomalyScores,
+                borderColor: "#00eaff",
+                tension: 0.25
+            }]
+        },
+        options: {
+            plugins: {
+                legend: { position: "bottom" }
+            }
+        }
+    });
+}
+
+loadData();
+</script>
+
+</body>
+</html>

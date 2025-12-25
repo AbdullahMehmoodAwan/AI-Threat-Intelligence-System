@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>SentinelAI Login</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body {
+        background: #000;
+        color: #fff;
+        font-family: Inter, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .login-box {
+        background: rgba(255,255,255,0.05);
+        padding: 40px;
+        border-radius: 12px;
+        width: 380px;
+    }
+    .title {
+        font-size: 26px;
+        font-weight: 800;
+        background: linear-gradient(90deg, #00eaff, #00c3ff);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    .error-text {
+        color: #ff4a4a;
+        margin-bottom: 10px;
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+<div class="login-box">
+
+    <div class="title mb-3">🛡 SentinelAI</div>
+
+    <!-- ERROR MESSAGE (shown only if ?error=1) -->
+    <div id="errorBox" class="error-text">Invalid username or password</div>
+
+    <form method="post" action="/login">
+        <label class="form-label">Username</label>
+        <input name="username" class="form-control" required>
+
+        <label class="form-label mt-3">Password</label>
+        <input type="password" name="password" class="form-control" required>
+
+        <button class="btn btn-info w-100 mt-4">Login</button>
+    </form>
+</div>
+
+<script>
+    // Show the error if login failed
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("error") === "1") {
+        document.getElementById("errorBox").style.display = "block";
+    }
+</script>
+
+</body>
+</html>

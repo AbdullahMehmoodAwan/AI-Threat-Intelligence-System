@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>SentinelAI – Analysis History</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body {
+        background: linear-gradient(160deg, #020617, #000);
+        color: #cfe3ff;
+        font-family: "Inter", sans-serif;
+        padding: 30px;
+    }
+    .cyber-h1 {
+        font-size: 2.4rem;
+        font-weight: 800;
+        background: linear-gradient(90deg, #00eaff, #00c3ff);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    .history-card {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(0,255,255,0.15);
+        padding: 18px;
+        border-radius: 14px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        transition: 0.25s;
+    }
+    .history-card:hover {
+        background: rgba(0,200,255,0.15);
+        transform: scale(1.02);
+    }
+    .badge-sev {
+        padding: 6px 10px;
+        border-radius: 10px;
+        font-weight: 600;
+    }
+    .low { background:#00ff99; color:#003300; }
+    .med { background:#ffe066; color:#5c4300; }
+    .high { background:#ff7b00; color:#331a00; }
+    .critical { background:#ff003c; color:#330008; }
+
+    #popup {
+        display:none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.85);
+        color: white;
+        padding: 40px;
+        z-index: 9999;
+    }
+</style>
+</head>
+
+<body>
+
+<h1 class="cyber-h1 mb-4">📜 SentinelAI – History</h1>
+
+<div id="historyList">Loading...</div>
+
+<div id="popup">
+    <button class="btn btn-danger mb-3" onclick="closePopup()">Close</button>
+    <div id="popupContent"></div>
+</div>
+
+<script>
+async function loadHistory() {
+    const listDiv = document.getElementById("historyList");
+
+    let res = await fetch("/api/history");
+    let data = await res.json();
+
+    if (!data.length) {
+        listDiv.innerHTML = "<p>No history yet. Analyze something first.</p>";
+        return;
+    }
+
+    listDiv.innerHTML = data.map(item => `
+        <div class="history-card" onclick='showDetails(${JSON.stringify(item)})'>
+            <h5>${new Date(item.timestamp).toLocaleString()}</h5>
+            <span class="badge-sev ${severity(item.threat_type)}">
+                Threat Level: ${item.threat_type}
+            </span>
+            <p class="mt-2">${item.summary.split(".")[0]}.</p>
+        </div>
+    `).join("");
+}
+
+function severity(lvl) {
+    if (lvl >= 4) return "critical";
+    if (lvl == 3) return "high";
+    if (lvl == 2) return "med";
+    return "low";
+}
+
+function showDetails(item) {
+    document.getElementById("popupContent").innerHTML = `
+        <h3>Threat Level: ${item.threat_type}</h3>
+        <pre>${JSON.stringify(item.iocs, null, 2)}</pre>
+        <h4>Summary</h4>
+        <p>${item.summary}</p>
+        <h4>Anomaly Score</h4>
+        <p>${item.anomaly_score}</p>
+    `;
+    document.getElementById("popup").style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+loadHistory();
+</script>
+
+</body>
+</html>
